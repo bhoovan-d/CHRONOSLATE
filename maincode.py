@@ -6,7 +6,12 @@ import pandas as pd
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+
+
+
+
+
+load_dotenv(dotenv_path=".env file path here")
 
 db_host = os.getenv('DB_HOST')
 db_user = os.getenv('DB_USER')
