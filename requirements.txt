@@ -1,0 +1,6 @@
+jsonlib-python3==1.6.1
+mysql-connector-python==8.0.33
+random==1.0.1
+matplotlib==3.7.2
+pandas==2.1.0
+python-dotenv==1.0.0
