@@ -30,6 +30,10 @@ Now do the following:
 
 You are now ready to run the program!
 
+###NOTES
+
+There are some extra bits of code in the program that may seem unnecessary but they are supposed to be used for future updates.
+
 
 ## Feedback
 
