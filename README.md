@@ -2,7 +2,7 @@
 # CHRONOSLATE
 
 It is an automatic time table generator for group 1 and group 2 students. It can generate countless timetable combinations pertaining to the student's needs.
-Made as a plugin for ChronoFactorem developed by CRUX-BPHC
+Made as a plugin for ChronoFactorem developed by CRUx-BPHC
 
 
 
