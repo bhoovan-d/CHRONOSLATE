@@ -232,10 +232,9 @@ dictionaries = []
 fix_dictionaries = []
 print("CHOOSE THE UNAVAILABLE SLOTS")
 input_sub(dictionaries)
-
+making_rem_data(rem_dict, dictionaries)
 print("CHOOSE THE FIXED SLOTS")
 input_sub(fix_dictionaries)
-
 making_fix_data(REMOVED_SUBS, fix_dictionaries)
 selected_slots = select_slots(rem_dict, REMOVED_SUBS)
 
