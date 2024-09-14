@@ -54,7 +54,7 @@ for course_code in groups[str(N)]:
                     INSERT INTO course_schedule (course_code, section, instructors, room, days, hours)
                     VALUES (%s, %s, %s, %s, %s, %s)
                 """, (course_code, section_name, instructors, room, days, hours))
-
+#data gets added to mysql database
 conn.commit()
 
 cursor = conn.cursor(dictionary=True)
@@ -69,7 +69,7 @@ lecture_dict = {}
 tutorial_dict = {}
 practical_dict = {}
 
-for row in rows:
+for row in rows:  #organises the data into structured dictionaries
     if row['course_code'] in groups[str(N)]:
 
         course_code = row['course_code']
@@ -130,7 +130,7 @@ all_dict.update(tutorial_dict)
 all_dict.update(practical_dict)
 
 
-def select_slots(subject_list, RSUBS):
+def select_slots(subject_list, RSUBS): #used for selecting the slots 
     selected_slots = []
     preselected_subjects = set()
 
@@ -165,7 +165,7 @@ def select_slots(subject_list, RSUBS):
             selected_slots = [slot for slots in RSUBS.values() for slot in slots]
 
 
-def check_conflict(selected_slots):
+def check_conflict(selected_slots): #function used to check clashes in the selected slots
     slots = set()
     for slot in selected_slots:
         for day in slot['days'].split(', '):
@@ -176,7 +176,7 @@ def check_conflict(selected_slots):
     return False  # No conflict
 
 
-def input_sub(dicts):
+def input_sub(dicts):#function used to take inputs from user
     num_entries = int(input("Enter the number of entries you want to add:"))
 
     for i in range(num_entries):
@@ -189,7 +189,7 @@ def input_sub(dicts):
     return dicts
 
 
-def making_rem_data(rdict, dictionaries):
+def making_rem_data(rdict, dictionaries):#function used for removing teacher slots
     for i in dictionaries:
         for key in i:
             for s in all_dict:
@@ -202,7 +202,7 @@ def making_rem_data(rdict, dictionaries):
     return rdict
 
 
-def making_fix_data(removed_subs, dictionary):
+def making_fix_data(removed_subs, dictionary):#function used for fixing teacher slots
     slot_checking = []
 
     for s in dictionary:
@@ -293,4 +293,4 @@ for (i, j), cell in table.get_celld().items():
     cell.set_linewidth(0.5)
 
 plt.title('Weekly Timetable', fontsize=16)
-plt.show()
+plt.show()#displays the timetable as a grid
